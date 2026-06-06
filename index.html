@@ -4,19 +4,29 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Samin Sarwat — Software Engineer · AI Innovator · Startup Builder</title>
-  <meta name="description" content="Portfolio of Samin Sarwat — 17-time hackathon champion, founder of AGROTHINK, Shell SSSVC 2025 Grand Winner, and LaunchX Top 15 startup alumnus. Software Engineering at UTM." />
+  <meta name="description" content="Portfolio of Samin Sarwat — 17× hackathon champion, founder of AGROTHINK, Shell SSSVC 2025 Grand Winner. Building AI that saves lives across Southeast Asia." />
   <meta name="author" content="Samin Sarwat" />
-  <meta property="og:title" content="Samin Sarwat — Portfolio" />
-  <meta property="og:description" content="Software Engineer · AI Innovator · 17× Champion" />
-  <meta property="og:type" content="website" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
-
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+<!-- CUSTOM CURSOR -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-dot" id="cursorDot"></div>
+
+<!-- NOISE OVERLAY -->
+<div class="noise"></div>
+
+<!-- PARTICLE CANVAS -->
+<canvas id="particles"></canvas>
+
+<!-- LOADING SCREEN -->
+<div class="loader" id="loader">
+  <div class="loader-name">
+    <span style="animation-delay:0.1s">S</span><span style="animation-delay:0.15s">A</span><span style="animation-delay:0.2s">M</span><span style="animation-delay:0.25s">I</span><span style="animation-delay:0.3s">N</span><span style="animation-delay:0.45s; margin-left:16px">S</span><span style="animation-delay:0.5s">A</span><span style="animation-delay:0.55s">R</span><span style="animation-delay:0.6s">W</span><span style="animation-delay:0.65s">A</span><span style="animation-delay:0.7s">T</span>
+  </div>
+  <div class="loader-bar-track"><div class="loader-bar"></div></div>
+</div>
 
 <!-- ============================================ -->
 <!-- NAVIGATION                                    -->
@@ -25,114 +35,142 @@
   <div class="nav-inner">
     <a href="#" class="nav-logo">samin<span>.</span></a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#achievements">Achievements</a></li>
-      <li><a href="#tech">Stack</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#about" data-hover>About</a></li>
+      <li><a href="#projects" data-hover>Projects</a></li>
+      <li><a href="#achievements" data-hover>Achievements</a></li>
+      <li><a href="#tech" data-hover>Stack</a></li>
+      <li><a href="#experience" data-hover>Experience</a></li>
     </ul>
-    <button class="nav-mobile-toggle" id="navToggle" aria-label="Toggle navigation">
+    <a href="#contact" class="nav-cta" data-hover>LET'S TALK</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
 
 <!-- ============================================ -->
-<!-- HERO                                          -->
+<!-- HERO · CINEMATIC SPLIT                        -->
 <!-- ============================================ -->
 <section class="hero" id="hero">
-  <div class="hero-bg">
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
-    <div class="grid-overlay"></div>
-  </div>
-  <div class="hero-content">
-    <div class="hero-badge reveal-el">
+  <div class="hero-left hero-stagger">
+    <div class="hero-badge">
       <span class="badge-dot"></span>
       OPEN TO OPPORTUNITIES
     </div>
-    <h1 class="hero-name reveal-el">
+    <h1 class="hero-name">
       <span class="gradient-text">SAMIN</span><br/>
-      <span class="gradient-text-gold">SARWAT</span>
+      <span class="gradient-text-gold">SARWAT.</span>
     </h1>
-    <div class="hero-subtitle reveal-el">
-      Software Engineer · AI Innovator · Startup Builder
+    <div class="hero-role">Software Engineer · AI Innovator · Startup Builder</div>
+    <div class="hero-role-muted">
+      Building AI products that save lives &amp; livelihoods. 17× champion. 2 live products. Zero plans of stopping.
     </div>
-    <div class="hero-subtitle-muted reveal-el">
-      Building AI products that save lives & livelihoods across Southeast Asia.
+    <div class="hero-pills">
+      <span class="pill">Shell SSSVC Grand Winner</span>
+      <span class="pill">Huawei Grand Prize</span>
+      <span class="pill">LaunchX Top 15</span>
+      <span class="pill">ASEAN Champion</span>
     </div>
-    <div class="hero-tagline reveal-el">
-      <span class="tagline-pill">17× Champion.</span>
-      <span class="tagline-pill">RM 25K+ Prize Money.</span>
-      <span class="tagline-pill">2 Live Products.</span>
-      <span class="tagline-pill">LaunchX Alumnus.</span>
+    <div class="hero-cta-row">
+      <a href="#contact" class="btn-primary" data-hover>GET IN TOUCH <span class="arrow">→</span></a>
+      <a href="#projects" class="btn-ghost" data-hover>VIEW WORK <span class="arrow">↓</span></a>
     </div>
-    <div class="hero-stats reveal-el">
-      <div>
-        <div class="hero-stat-label">ROLE</div>
-        <div class="hero-stat-value">Full-Stack Developer</div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-image-wrap" data-tilt>
+      <div class="hero-image-glow"></div>
+      <div class="hero-image-border"></div>
+      <img src="samin.jpeg" alt="Samin Sarwat" class="hero-image" />
+      <div class="hero-float-card card-1" data-hover>
+        <div class="float-card-num gradient-text">17+</div>
+        <div class="float-card-label">CHAMPIONSHIPS</div>
       </div>
-      <div>
-        <div class="hero-stat-label">UNIVERSITY</div>
-        <div class="hero-stat-value">UTM · Software Eng</div>
+      <div class="hero-float-card card-2" data-hover>
+        <div class="float-card-num gradient-text-gold">RM 25K+</div>
+        <div class="float-card-label">PRIZE MONEY</div>
       </div>
-      <div>
-        <div class="hero-stat-label">SIGNATURE WIN</div>
-        <div class="hero-stat-value">Shell SSSVC 2025 · Grand Prize</div>
-      </div>
-      <div>
-        <div class="hero-stat-label">LOCATION</div>
-        <div class="hero-stat-value">Johor Bahru, Malaysia</div>
+      <div class="hero-float-card card-3" data-hover>
+        <div class="float-card-num" style="color:var(--green)">2</div>
+        <div class="float-card-label">LIVE PRODUCTS</div>
       </div>
     </div>
+  </div>
+  <div class="scroll-indicator">
+    <span>SCROLL</span>
+    <div class="scroll-line"></div>
   </div>
 </section>
 
 <!-- ============================================ -->
+<!-- MARQUEE TICKER                                -->
+<!-- ============================================ -->
+<div class="marquee-section">
+  <div class="marquee-track">
+    <span class="marquee-item"><span class="dot"></span>Shell SSSVC 2025 Grand Winner</span>
+    <span class="marquee-item"><span class="dot"></span>Huawei AppGallery Grand Prize</span>
+    <span class="marquee-item"><span class="dot"></span>ASEAN Startupthon Champion</span>
+    <span class="marquee-item"><span class="dot"></span>UTM–KNU SISC Gold Champion</span>
+    <span class="marquee-item"><span class="dot"></span>UTM AI Ideathon 1st Prize</span>
+    <span class="marquee-item"><span class="dot"></span>JDLD 2025 Tertiary Champion</span>
+    <span class="marquee-item"><span class="dot"></span>Digital Innovation Challenge Champion</span>
+    <span class="marquee-item"><span class="dot"></span>LaunchX Top 15 Startup</span>
+    <span class="marquee-item"><span class="dot"></span>IPPIC Gold + Best Poster</span>
+    <span class="marquee-item"><span class="dot"></span>DINS Gold Medal</span>
+    <!-- Duplicate for seamless loop -->
+    <span class="marquee-item"><span class="dot"></span>Shell SSSVC 2025 Grand Winner</span>
+    <span class="marquee-item"><span class="dot"></span>Huawei AppGallery Grand Prize</span>
+    <span class="marquee-item"><span class="dot"></span>ASEAN Startupthon Champion</span>
+    <span class="marquee-item"><span class="dot"></span>UTM–KNU SISC Gold Champion</span>
+    <span class="marquee-item"><span class="dot"></span>UTM AI Ideathon 1st Prize</span>
+    <span class="marquee-item"><span class="dot"></span>JDLD 2025 Tertiary Champion</span>
+    <span class="marquee-item"><span class="dot"></span>Digital Innovation Challenge Champion</span>
+    <span class="marquee-item"><span class="dot"></span>LaunchX Top 15 Startup</span>
+    <span class="marquee-item"><span class="dot"></span>IPPIC Gold + Best Poster</span>
+    <span class="marquee-item"><span class="dot"></span>DINS Gold Medal</span>
+  </div>
+</div>
+
+<!-- ============================================ -->
 <!-- ABOUT                                         -->
 <!-- ============================================ -->
-<section class="section-alt" id="about">
+<section class="section" id="about">
   <div class="container">
     <div class="about-grid">
-      <div class="about-image-wrap reveal-el">
-        <div class="about-image-frame">
-          <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;">
-            <div style="font-size:4rem;">👨‍💻</div>
-            <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:0.22em;color:var(--ink-3);font-weight:600;">SAMIN SARWAT</div>
-          </div>
-          <div class="about-image-tag">● UTM · CLASS OF 2027</div>
+      <div class="about-image-col reveal">
+        <div class="about-portrait">
+          <img src="samin.jpeg" alt="Samin Sarwat" />
+          <div class="about-portrait-overlay"></div>
         </div>
+        <div class="about-location">📍 JOHOR BAHRU, MALAYSIA</div>
       </div>
-      <div class="about-text">
+      <div class="about-content">
         <div class="section-header">
-          <div class="eyebrow reveal-el">About Me</div>
-          <h2 class="section-title reveal-el">
-            I build software that <span class="accent">matters.</span>
-          </h2>
+          <div class="eyebrow reveal">About</div>
+          <h2 class="section-title reveal reveal-d1">I don't just write code.<br/><span class="accent">I ship products.</span></h2>
         </div>
-        <p class="reveal-el">
-          I'm a final-year <strong>Software Engineering</strong> student at Universiti Teknologi Malaysia with a deep passion for the startup ecosystem — thriving in fast-paced, high-ownership environments where I can build software, wear multiple hats, and help scale products from zero to one.
+        <p class="reveal reveal-d2">
+          Final-year <strong>Software Engineering</strong> student at UTM with a deep obsession for the startup ecosystem. I thrive in the chaos — fast-paced, high-ownership environments where the difference between an idea and a product is just one all-nighter away.
         </p>
-        <p class="reveal-el">
-          I've won <strong>17+ national and international competitions</strong> and built products like <strong>AGROTHINK</strong> (AI agriculture platform live on Huawei AppGallery), <strong>CarBuddy</strong> (AI microsleep detection — Shell SSSVC Grand Prize), and <strong>DHL IncidentHub</strong> (AI incident management with UiPath RPA).
+        <h3 class="reveal reveal-d3">The Short Version</h3>
+        <p class="reveal reveal-d3">
+          I've won <strong>17+ national and international competitions</strong> in one academic year. I built <strong>AGROTHINK</strong> — an AI agriculture platform now live on Huawei AppGallery serving Southeast Asian farmers. I led <strong>CarBuddy</strong> to the Shell SSSVC 2025 Grand Prize and demoed it to Malaysia's Minister of Transport. I built <strong>DHL IncidentHub</strong> that processes incidents 5× faster with AI + RPA.
         </p>
-        <p class="reveal-el">
-          I learn quickly, deliver fast, and want to stay loyal to a growing company where I can help scale products and grow into key technical leadership roles.
+        <h3 class="reveal reveal-d4">What I'm Looking For</h3>
+        <p class="reveal reveal-d4">
+          A <strong>startup or high-growth company</strong> where I can wear multiple hats, ship fast, and grow into a key technical leadership role. I learn fast. I deliver faster. I want to stay loyal and help scale something meaningful.
         </p>
-        <div class="about-stats-row">
-          <div class="about-stat reveal-el reveal-delay-1">
-            <div class="about-stat-num gradient-text">17+</div>
-            <div class="about-stat-label">Championships Won</div>
+        <div class="about-stats reveal reveal-d5">
+          <div class="stat-block">
+            <div class="stat-num gradient-text">17+</div>
+            <div class="stat-label">CHAMPIONSHIPS</div>
           </div>
-          <div class="about-stat reveal-el reveal-delay-2">
-            <div class="about-stat-num gradient-text-gold">RM 25K+</div>
-            <div class="about-stat-label">Prize Money</div>
+          <div class="stat-block">
+            <div class="stat-num gradient-text-gold">RM25K+</div>
+            <div class="stat-label">PRIZE MONEY</div>
           </div>
-          <div class="about-stat reveal-el reveal-delay-3">
-            <div class="about-stat-num gradient-text">2</div>
-            <div class="about-stat-label">Live Products</div>
+          <div class="stat-block">
+            <div class="stat-num gradient-text">3.21</div>
+            <div class="stat-label">CGPA · UTM</div>
           </div>
         </div>
       </div>
@@ -143,104 +181,111 @@
 <!-- ============================================ -->
 <!-- PROJECTS                                      -->
 <!-- ============================================ -->
-<section class="section-dark" id="projects">
+<section class="section" id="projects">
   <div class="container">
     <div class="section-header">
-      <div class="eyebrow reveal-el">Projects</div>
-      <h2 class="section-title reveal-el">
-        Things I've <span class="accent">built.</span>
-      </h2>
-      <p class="section-sub reveal-el">From concept to deployment — products that solve real problems for real people.</p>
+      <div class="eyebrow reveal">Projects</div>
+      <h2 class="section-title reveal reveal-d1">Things I've <span class="accent">shipped.</span></h2>
+      <p class="section-sub reveal reveal-d2">Real products. Real users. Real impact.</p>
     </div>
     <div class="projects-grid">
 
-      <!-- AGROTHINK (Featured) -->
-      <div class="project-card featured reveal-el">
-        <div class="project-left">
-          <div class="project-tag">◆ FOUNDER · SOLE DEVELOPER</div>
-          <div class="project-name">AGROTHINK</div>
-          <div class="project-desc">AI-powered agricultural platform for Southeast Asian smallholder farmers. Camera-based crop disease detection, smart farming advisory, and weather intelligence — mobile-first, offline-ready. Champion at 10+ competitions.</div>
-          <div class="project-tech">
-            <span>Flutter</span>
-            <span>Firebase</span>
-            <span>Huawei HMS</span>
-            <span>Gemini AI</span>
-            <span>TensorFlow Lite</span>
+      <!-- AGROTHINK -->
+      <div class="project-card featured reveal" data-tilt>
+        <div class="project-card-shine"></div>
+        <div class="project-card-inner">
+          <div>
+            <div class="project-tag">◆ FOUNDER · SOLE DEVELOPER · 10+ WINS</div>
+            <div class="project-name">AGROTHINK</div>
+            <div class="project-desc">AI-powered agricultural platform for 100M+ Southeast Asian smallholder farmers. Camera-based crop disease detection, smart advisory, weather intelligence. Mobile-first, offline-ready. Live on Huawei AppGallery. Champion at 10+ competitions including Huawei Grand Prize.</div>
+            <div class="project-tech-row">
+              <span class="tech-tag">Flutter</span>
+              <span class="tech-tag">Firebase</span>
+              <span class="tech-tag">Huawei HMS</span>
+              <span class="tech-tag">Gemini AI</span>
+              <span class="tech-tag">TensorFlow Lite</span>
+            </div>
+            <a href="https://appgallery.huawei.com" class="project-link" data-hover target="_blank">VIEW ON APPGALLERY <span class="arrow">→</span></a>
           </div>
-          <div class="project-links">
-            <a href="https://appgallery.huawei.com" class="project-link" target="_blank">HUAWEI APPGALLERY →</a>
-          </div>
-        </div>
-        <div class="project-right">
-          <div class="project-image-shell" style="background:linear-gradient(145deg, rgba(232,180,166,0.12), rgba(123,44,61,0.08)); display:flex; align-items:center; justify-content:center; aspect-ratio:4/3;">
-            <div style="text-align:center;padding:32px;">
-              <div style="font-size:3.5rem;margin-bottom:12px;">🌾</div>
-              <div style="font-family:var(--font-display);font-weight:800;font-size:1.5rem;color:var(--ink-0);margin-bottom:8px;">AGROTHINK</div>
-              <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:0.22em;color:var(--gold);font-weight:700;">LIVE ON HUAWEI APPGALLERY</div>
+          <div class="project-visual">
+            <div style="text-align:center;">
+              <div class="project-visual-emoji">🌾</div>
+              <div class="project-visual-label">AGROTHINK</div>
+              <div class="project-visual-sub">● LIVE ON HUAWEI APPGALLERY</div>
             </div>
           </div>
         </div>
+        <div class="project-num">01</div>
       </div>
 
       <!-- CarBuddy -->
-      <div class="project-card reveal-el reveal-delay-1">
-        <div class="project-tag">🏆 SHELL SSSVC 2025 · GRAND WINNER</div>
-        <div class="project-name">CarBuddy</div>
-        <div class="project-desc">AI microsleep detection app using real-time computer vision. Detects drowsiness before it strikes — any smartphone, no extra hardware. Won RM 10K Grand Prize, demonstrated to Malaysia's Minister of Transport.</div>
-        <div class="project-tech">
-          <span>Python</span>
-          <span>OpenCV</span>
-          <span>Computer Vision</span>
-          <span>dlib</span>
+      <div class="project-card reveal reveal-d1" data-tilt>
+        <div class="project-card-shine"></div>
+        <div class="project-card-inner">
+          <div class="project-tag">🏆 SHELL SSSVC 2025 · NATIONAL GRAND WINNER · RM10K</div>
+          <div class="project-name">CarBuddy</div>
+          <div class="project-desc">AI microsleep detection using real-time computer vision. Any smartphone, no hardware needed. Demoed live to Malaysia's Minister of Transport YB Anthony Loke. Projected to save 500 lives/year.</div>
+          <div class="project-tech-row">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">OpenCV</span>
+            <span class="tech-tag">dlib</span>
+            <span class="tech-tag">Computer Vision</span>
+          </div>
+          <a href="https://github.com/saminsarwat007" class="project-link" data-hover target="_blank">VIEW PROJECT <span class="arrow">→</span></a>
         </div>
-        <div class="project-links">
-          <a href="https://github.com/saminsarwat007" class="project-link" target="_blank">VIEW PROJECT →</a>
-        </div>
+        <div class="project-num">02</div>
       </div>
 
       <!-- DHL IncidentHub -->
-      <div class="project-card reveal-el reveal-delay-2">
-        <div class="project-tag">◢ FULL-STACK DEVELOPER</div>
-        <div class="project-name">DHL IncidentHub</div>
-        <div class="project-desc">AI incident management unifying 5 complaint channels into one workflow. UiPath RPA bot processes incidents 5× faster (85s vs 7min), projecting RM 600K/year savings for DHL operations.</div>
-        <div class="project-tech">
-          <span>Next.js 16</span>
-          <span>Supabase</span>
-          <span>Gemini 2.5 Flash</span>
-          <span>UiPath RPA</span>
+      <div class="project-card reveal reveal-d2" data-tilt>
+        <div class="project-card-shine"></div>
+        <div class="project-card-inner">
+          <div class="project-tag">◢ AI + RPA AUTOMATION</div>
+          <div class="project-name">DHL IncidentHub</div>
+          <div class="project-desc">Unified 5 complaint channels into one AI workflow. UiPath RPA bot processes incidents 5× faster (85s vs 7min manual). Gemini AI for 14-field extraction and 8-dept classification. RM 600K/year projected savings.</div>
+          <div class="project-tech-row">
+            <span class="tech-tag">Next.js 16</span>
+            <span class="tech-tag">Supabase</span>
+            <span class="tech-tag">Gemini 2.5</span>
+            <span class="tech-tag">UiPath RPA</span>
+          </div>
+          <a href="https://dhlutm.vercel.app" class="project-link" data-hover target="_blank">LIVE DEMO <span class="arrow">→</span></a>
         </div>
-        <div class="project-links">
-          <a href="https://dhlutm.vercel.app" class="project-link" target="_blank">LIVE DEMO →</a>
-        </div>
+        <div class="project-num">03</div>
       </div>
 
       <!-- Bridge to Malaysia -->
-      <div class="project-card reveal-el reveal-delay-1">
-        <div class="project-tag">◈ FULL-STACK DEVELOPER</div>
-        <div class="project-name">Bridge to Malaysia</div>
-        <div class="project-desc">SaaS platform managing student university applications from Bangladesh to Malaysia. Full document management with Google Drive API, automated PDF generation, and Redis caching.</div>
-        <div class="project-tech">
-          <span>Next.js 14</span>
-          <span>Supabase</span>
-          <span>Google APIs</span>
-          <span>Resend</span>
-          <span>Redis</span>
+      <div class="project-card reveal reveal-d1" data-tilt>
+        <div class="project-card-shine"></div>
+        <div class="project-card-inner">
+          <div class="project-tag">◈ FULL-STACK SAAS</div>
+          <div class="project-name">Bridge to Malaysia</div>
+          <div class="project-desc">SaaS managing student university applications from Bangladesh to Malaysia. Full document management with Google Drive API, automated PDF generation, email notifications, and Redis caching.</div>
+          <div class="project-tech-row">
+            <span class="tech-tag">Next.js 14</span>
+            <span class="tech-tag">Supabase</span>
+            <span class="tech-tag">Google APIs</span>
+            <span class="tech-tag">Redis</span>
+          </div>
+          <a href="https://github.com/saminsarwat007/BRIDGETOMALAYSIA" class="project-link" data-hover target="_blank">GITHUB <span class="arrow">→</span></a>
         </div>
-        <div class="project-links">
-          <a href="https://github.com/saminsarwat007/BRIDGETOMALAYSIA" class="project-link" target="_blank">GITHUB →</a>
-        </div>
+        <div class="project-num">04</div>
       </div>
 
       <!-- AI Chatbot -->
-      <div class="project-card reveal-el reveal-delay-2">
-        <div class="project-tag">🏆 JDLD 2025 · CHAMPION</div>
-        <div class="project-name">AI Chatbot — Lead Gen & Scheduler</div>
-        <div class="project-desc">Production-ready AI chatbot built in 60 minutes under competition pressure. Automated lead generation and meeting scheduling. Won champion title out of 9 universities.</div>
-        <div class="project-tech">
-          <span>Flowise</span>
-          <span>LangChain</span>
-          <span>Gemini AI</span>
+      <div class="project-card reveal reveal-d2" data-tilt>
+        <div class="project-card-shine"></div>
+        <div class="project-card-inner">
+          <div class="project-tag">🏆 JDLD 2025 · CHAMPION · 9 UNIVERSITIES</div>
+          <div class="project-name">AI Lead-Gen Chatbot</div>
+          <div class="project-desc">Production-ready AI chatbot built in 60 minutes under competition pressure. Automated lead generation, qualification, and meeting scheduling. Beat 9 universities for the champion title.</div>
+          <div class="project-tech-row">
+            <span class="tech-tag">Flowise</span>
+            <span class="tech-tag">LangChain</span>
+            <span class="tech-tag">Gemini AI</span>
+          </div>
         </div>
+        <div class="project-num">05</div>
       </div>
 
     </div>
@@ -248,37 +293,40 @@
 </section>
 
 <!-- ============================================ -->
-<!-- ACHIEVEMENTS                                  -->
+<!-- ACHIEVEMENTS · BENTO                          -->
 <!-- ============================================ -->
-<section class="section-alt" id="achievements">
+<section class="section" id="achievements">
   <div class="container">
     <div class="section-header">
-      <div class="eyebrow reveal-el">Achievements</div>
-      <h2 class="section-title reveal-el">
-        One student. <span class="accent-gold">17+ medals, titles & recognitions.</span>
-      </h2>
-      <p class="section-sub reveal-el">Total prize winnings: RM 25,000+</p>
+      <div class="eyebrow reveal">Achievements</div>
+      <h2 class="section-title reveal reveal-d1">One academic year.<br/><span class="accent-gold">17+ titles.</span></h2>
+      <p class="section-sub reveal reveal-d2">Total prize winnings: RM 25,000+</p>
     </div>
-    <div class="achievements-wall">
-      <div class="achievement-card champ reveal-el"><div class="achievement-rank">🏆 NATIONAL CHAMPION</div><div class="achievement-name">Shell SSSVC 2025 · CarBuddy</div><div class="achievement-sub">RM10,000 · Minister of Transport · 200+ teams</div></div>
-      <div class="achievement-card champ reveal-el reveal-delay-1"><div class="achievement-rank">🏆 GRAND PRIZE</div><div class="achievement-name">Huawei AppGallery 2025</div><div class="achievement-sub">UMPSA × Huawei · RM9,000 · 36 institutions</div></div>
-      <div class="achievement-card champ reveal-el reveal-delay-2"><div class="achievement-rank">🏆 CHAMPION</div><div class="achievement-name">ASEAN Startupthon 2025</div><div class="achievement-sub">Malaysia Qualifier · AGROTHINK</div></div>
-      <div class="achievement-card champ reveal-el reveal-delay-3"><div class="achievement-rank">🏆 CHAMPION</div><div class="achievement-name">KNU 2025 · UTM–KNU SISC</div><div class="achievement-sub">Gold · Malaysia–Korea Bilateral</div></div>
-      <div class="achievement-card champ reveal-el"><div class="achievement-rank">🥇 1st PRIZE</div><div class="achievement-name">UTM AI Ideathon 2025</div><div class="achievement-sub">48 teams · MDEC judges</div></div>
-      <div class="achievement-card champ reveal-el reveal-delay-1"><div class="achievement-rank">🏆 CHAMPION</div><div class="achievement-name">JDLD 2025 · AI Chatbot</div><div class="achievement-sub">9 universities · ICDL National</div></div>
-      <div class="achievement-card champ reveal-el reveal-delay-2"><div class="achievement-rank">🏆 CHAMPION</div><div class="achievement-name">Digital Innovation Challenge</div><div class="achievement-sub">AGROTHINK · National pitch</div></div>
-      <div class="achievement-card champ reveal-el reveal-delay-3"><div class="achievement-rank">🏆 CHAMPION</div><div class="achievement-name">Digitalization Pitching · JCI JB</div><div class="achievement-sub">RM1,000 · beat MMU, Sunway, Southampton</div></div>
-      <div class="achievement-card champ reveal-el"><div class="achievement-rank">🥇 1st PLACE</div><div class="achievement-name">Pitch Lab 2025</div><div class="achievement-sub">Inter-faculty pitch</div></div>
-      <div class="achievement-card gold reveal-el reveal-delay-1"><div class="achievement-rank">🥇 GOLD + BEST POSTER</div><div class="achievement-name">IPPIC / TVET 9th 2025</div><div class="achievement-sub">Only UG team · beat MSc/PhD</div></div>
-      <div class="achievement-card gold reveal-el reveal-delay-2"><div class="achievement-rank">🥇 GOLD MEDAL</div><div class="achievement-name">DINS / Digital Symposium</div><div class="achievement-sub">UTHM · MDEC-endorsed</div></div>
-      <div class="achievement-card silver reveal-el reveal-delay-3"><div class="achievement-rank">🥈 SILVER × 3</div><div class="achievement-name">NALI 2025 · AGROTHINK</div><div class="achievement-sub">National Academic Conference</div></div>
-      <div class="achievement-card bronze reveal-el"><div class="achievement-rank">🥉 BRONZE</div><div class="achievement-name">NALI 2025 · AGROLEARN</div><div class="achievement-sub">Agri-education vertical</div></div>
-      <div class="achievement-card bronze reveal-el reveal-delay-1"><div class="achievement-rank">🥉 BRONZE</div><div class="achievement-name">KNU–UTM SISC 2024 · SportX</div><div class="achievement-sub">RM2,000 · KNU President's Award</div></div>
-      <div class="achievement-card silver reveal-el reveal-delay-2"><div class="achievement-rank">🥈 2nd PLACE</div><div class="achievement-name">HatchQuest 2024 · SportX</div><div class="achievement-sub">UTM Computing pitch</div></div>
-      <div class="achievement-card star reveal-el reveal-delay-3"><div class="achievement-rank">🌟 TOP 15 STARTUP</div><div class="achievement-name">LaunchX 2025/26 · MOHE</div><div class="achievement-sub">45 teams · 25 universities · Demo Day</div></div>
-    </div>
-    <div class="achievements-extra reveal-el">
-      + Pitch Lab 3rd · IDLC Qualifier Top 10 · Digital Nexus Emerging Innovation · Computing Gala Global Star Award · TVET 9th Gold
+    <div class="achievements-bento">
+      <!-- BIG: Shell SSSVC -->
+      <div class="ach-card big champ reveal" data-hover>
+        <div class="ach-rank">🏆 NATIONAL GRAND WINNER</div>
+        <div class="ach-name">Shell SelamatSampai Varsity Challenge 2025</div>
+        <div class="ach-big-amount gradient-text-gold">RM 10,000</div>
+        <div class="ach-sub">Grand Prize + RM1K Startup Fund · 200+ teams nationwide</div>
+        <div class="ach-big-detail">Presented CarBuddy to YB Anthony Loke (Minister of Transport), Shell Malaysia Country Chair, and MIROS Director-General. Media coverage: NST, The Star, Berita Harian.</div>
+      </div>
+
+      <!-- Regular cards -->
+      <div class="ach-card champ reveal reveal-d1" data-hover><div class="ach-rank">🏆 GRAND PRIZE</div><div class="ach-name">Huawei AppGallery 2025</div><div class="ach-sub">RM9,000 · 36 institutions · Solo</div></div>
+      <div class="ach-card champ reveal reveal-d2" data-hover><div class="ach-rank">🏆 CHAMPION</div><div class="ach-name">ASEAN Startupthon 2025</div><div class="ach-sub">Malaysia Qualifier · AGROTHINK</div></div>
+      <div class="ach-card champ reveal reveal-d3" data-hover><div class="ach-rank">🏆 GOLD CHAMPION</div><div class="ach-name">UTM–KNU SISC 2025</div><div class="ach-sub">Malaysia–Korea Bilateral</div></div>
+      <div class="ach-card champ reveal reveal-d4" data-hover><div class="ach-rank">🥇 1st PRIZE</div><div class="ach-name">UTM AI Ideathon 2025</div><div class="ach-sub">48 teams · MDEC judges</div></div>
+
+      <div class="ach-card champ reveal" data-hover><div class="ach-rank">🏆 CHAMPION</div><div class="ach-name">JDLD 2025 · AI Chatbot</div><div class="ach-sub">9 universities · ICDL National</div></div>
+      <div class="ach-card champ reveal reveal-d1" data-hover><div class="ach-rank">🏆 CHAMPION</div><div class="ach-name">Digital Innovation Challenge</div><div class="ach-sub">National-level pitch</div></div>
+      <div class="ach-card champ reveal reveal-d2" data-hover><div class="ach-rank">🏆 CHAMPION</div><div class="ach-name">JCI JB Pitching 2025</div><div class="ach-sub">Beat MMU, Sunway, Southampton</div></div>
+      <div class="ach-card champ reveal reveal-d3" data-hover><div class="ach-rank">🥇 1st PLACE</div><div class="ach-name">Pitch Lab 2025</div><div class="ach-sub">Inter-faculty pitch</div></div>
+
+      <div class="ach-card gold reveal" data-hover><div class="ach-rank">🥇 GOLD + BEST POSTER</div><div class="ach-name">IPPIC / TVET 9th 2025</div><div class="ach-sub">Only UG · beat MSc/PhD</div></div>
+      <div class="ach-card gold reveal reveal-d1" data-hover><div class="ach-rank">🥇 GOLD MEDAL</div><div class="ach-name">DINS / Digital Symposium</div><div class="ach-sub">UTHM · MDEC-endorsed</div></div>
+      <div class="ach-card silver reveal reveal-d2" data-hover><div class="ach-rank">🥈 SILVER × 3</div><div class="ach-name">NALI 2025</div><div class="ach-sub">National Academic Conference</div></div>
+      <div class="ach-card star reveal reveal-d3" data-hover><div class="ach-rank">🌟 TOP 15 STARTUP</div><div class="ach-name">LaunchX 2025/26 · MOHE</div><div class="ach-sub">45 teams · 25 universities</div></div>
     </div>
   </div>
 </section>
@@ -286,114 +334,120 @@
 <!-- ============================================ -->
 <!-- TECH STACK                                    -->
 <!-- ============================================ -->
-<section class="section-dark" id="tech">
+<section class="section" id="tech">
   <div class="container">
-    <div class="section-header">
-      <div class="eyebrow reveal-el">Tech Stack</div>
-      <h2 class="section-title reveal-el">
-        Tools I <span class="accent">work with.</span>
-      </h2>
+    <div class="section-header" style="text-align:center;">
+      <div class="eyebrow reveal">Stack</div>
+      <h2 class="section-title reveal reveal-d1">Tools I <span class="accent">think in.</span></h2>
+      <p class="section-sub reveal reveal-d2" style="margin:16px auto 0;">Not just technologies. Weapons of mass creation.</p>
     </div>
-    <div class="tech-grid">
-      <div class="tech-category reveal-el">
-        <div class="tech-category-name">LANGUAGES</div>
-        <div class="tech-items">
-          <span class="tech-item">Dart</span>
-          <span class="tech-item">TypeScript</span>
-          <span class="tech-item">JavaScript</span>
-          <span class="tech-item">Java</span>
-          <span class="tech-item">C++</span>
-          <span class="tech-item">Python</span>
-          <span class="tech-item">HTML/CSS</span>
-          <span class="tech-item">SQL</span>
-        </div>
+    <div class="tech-cloud reveal reveal-d3">
+      <span class="tech-cloud-item primary" data-hover>Flutter</span>
+      <span class="tech-cloud-item primary" data-hover>Next.js</span>
+      <span class="tech-cloud-item primary" data-hover>React</span>
+      <span class="tech-cloud-item primary" data-hover>Supabase</span>
+      <span class="tech-cloud-item primary" data-hover>Firebase</span>
+      <span class="tech-cloud-item primary" data-hover>Gemini AI</span>
+      <span class="tech-cloud-item" data-hover>TypeScript</span>
+      <span class="tech-cloud-item" data-hover>Dart</span>
+      <span class="tech-cloud-item" data-hover>Python</span>
+      <span class="tech-cloud-item" data-hover>JavaScript</span>
+      <span class="tech-cloud-item" data-hover>Java</span>
+      <span class="tech-cloud-item" data-hover>C++</span>
+      <span class="tech-cloud-item" data-hover>Vue.js</span>
+      <span class="tech-cloud-item" data-hover>Tailwind CSS</span>
+      <span class="tech-cloud-item" data-hover>shadcn/ui</span>
+      <span class="tech-cloud-item" data-hover>Framer Motion</span>
+      <span class="tech-cloud-item" data-hover>PostgreSQL</span>
+      <span class="tech-cloud-item" data-hover>Upstash Redis</span>
+      <span class="tech-cloud-item" data-hover>Huawei HMS SDK</span>
+      <span class="tech-cloud-item" data-hover>TensorFlow Lite</span>
+      <span class="tech-cloud-item" data-hover>OpenCV</span>
+      <span class="tech-cloud-item" data-hover>UiPath RPA</span>
+      <span class="tech-cloud-item" data-hover>Flowise</span>
+      <span class="tech-cloud-item" data-hover>LangChain</span>
+      <span class="tech-cloud-item" data-hover>REST APIs</span>
+      <span class="tech-cloud-item" data-hover>Radix UI</span>
+    </div>
+    <div class="tech-categories reveal">
+      <div class="tech-cat" data-hover>
+        <div class="tech-cat-name">LANGUAGES</div>
+        <div class="tech-cat-count">8</div>
+        <div class="tech-cat-label">proficient</div>
       </div>
-      <div class="tech-category reveal-el reveal-delay-1">
-        <div class="tech-category-name">MOBILE</div>
-        <div class="tech-items">
-          <span class="tech-item">Flutter</span>
-          <span class="tech-item">Provider</span>
-          <span class="tech-item">Huawei HMS SDK</span>
-          <span class="tech-item">Lottie</span>
-          <span class="tech-item">Flutter Animate</span>
-        </div>
+      <div class="tech-cat" data-hover>
+        <div class="tech-cat-name">MOBILE</div>
+        <div class="tech-cat-count">5</div>
+        <div class="tech-cat-label">tools</div>
       </div>
-      <div class="tech-category reveal-el reveal-delay-2">
-        <div class="tech-category-name">FRONTEND</div>
-        <div class="tech-items">
-          <span class="tech-item">Next.js</span>
-          <span class="tech-item">React</span>
-          <span class="tech-item">Vue.js</span>
-          <span class="tech-item">Tailwind CSS</span>
-          <span class="tech-item">shadcn/ui</span>
-          <span class="tech-item">Radix UI</span>
-          <span class="tech-item">Framer Motion</span>
-        </div>
+      <div class="tech-cat" data-hover>
+        <div class="tech-cat-name">FRONTEND</div>
+        <div class="tech-cat-count">7</div>
+        <div class="tech-cat-label">frameworks</div>
       </div>
-      <div class="tech-category reveal-el reveal-delay-3">
-        <div class="tech-category-name">BACKEND & CLOUD</div>
-        <div class="tech-items">
-          <span class="tech-item">Supabase</span>
-          <span class="tech-item">Firebase</span>
-          <span class="tech-item">PostgreSQL</span>
-          <span class="tech-item">REST APIs</span>
-          <span class="tech-item">Upstash Redis</span>
-        </div>
+      <div class="tech-cat" data-hover>
+        <div class="tech-cat-name">BACKEND</div>
+        <div class="tech-cat-count">5</div>
+        <div class="tech-cat-label">services</div>
       </div>
-      <div class="tech-category reveal-el" style="grid-column: span 2;">
-        <div class="tech-category-name">AI & AUTOMATION</div>
-        <div class="tech-items">
-          <span class="tech-item">Google Gemini API</span>
-          <span class="tech-item">Firebase AI Logic</span>
-          <span class="tech-item">TensorFlow Lite</span>
-          <span class="tech-item">OpenCV</span>
-          <span class="tech-item">Flowise</span>
-          <span class="tech-item">LangChain</span>
-          <span class="tech-item">UiPath RPA</span>
-          <span class="tech-item">Windsurf</span>
-          <span class="tech-item">Antigravity</span>
-        </div>
+      <div class="tech-cat" data-hover>
+        <div class="tech-cat-name">AI</div>
+        <div class="tech-cat-count">7</div>
+        <div class="tech-cat-label">tools</div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============================================ -->
-<!-- EXPERIENCE                                    -->
+<!-- EXPERIENCE · TIMELINE                         -->
 <!-- ============================================ -->
-<section class="section-alt" id="experience">
+<section class="section" id="experience">
   <div class="container">
     <div class="section-header">
-      <div class="eyebrow reveal-el">Experience</div>
-      <h2 class="section-title reveal-el">
-        Beyond the <span class="accent">medals.</span>
-      </h2>
+      <div class="eyebrow reveal">Experience</div>
+      <h2 class="section-title reveal reveal-d1">Beyond the <span class="accent">medals.</span></h2>
     </div>
-    <div class="timeline">
-      <div class="timeline-item reveal-el">
+    <div class="timeline-wrap">
+      <!-- Item 1 (right) -->
+      <div class="timeline-spacer"></div>
+      <div class="timeline-center"><div class="timeline-dot"></div><div class="timeline-line"></div></div>
+      <div class="timeline-card reveal" data-hover>
         <div class="timeline-date">JUL 2025 – PRESENT</div>
-        <div class="timeline-title">Administrative Manager (Part-Time)</div>
+        <div class="timeline-role">Administrative Manager</div>
         <div class="timeline-org">Step 1 Fitness · Johor Bahru</div>
-        <div class="timeline-desc">Spearheaded digital marketing strategy, content creation, financial reporting, and CFO-level strategic planning for a growing fitness brand.</div>
+        <div class="timeline-desc">Digital marketing strategy, content creation, financial reporting, and CFO-level strategic planning for a growing fitness brand.</div>
       </div>
-      <div class="timeline-item reveal-el reveal-delay-1">
+
+      <!-- Item 2 (left) -->
+      <div class="timeline-card timeline-card-left reveal reveal-d1" data-hover>
         <div class="timeline-date">AUG 2023 – PRESENT</div>
-        <div class="timeline-title">Exco — Sponsorship & Entrepreneurship</div>
-        <div class="timeline-org">PERSAKA (Faculty of Computing Student Body) · UTM</div>
-        <div class="timeline-desc">Secured corporate sponsorships for faculty events and coordinated student entrepreneurship programmes across the Computing faculty.</div>
+        <div class="timeline-role">Exco — Sponsorship & Entrepreneurship</div>
+        <div class="timeline-org">PERSAKA · UTM Faculty of Computing</div>
+        <div class="timeline-desc">Secured corporate sponsorships for faculty events. Coordinated student entrepreneurship programmes across Computing.</div>
       </div>
-      <div class="timeline-item reveal-el reveal-delay-2">
+      <div class="timeline-center"><div class="timeline-dot"></div><div class="timeline-line"></div></div>
+      <div class="timeline-spacer"></div>
+
+      <!-- Item 3 (right) -->
+      <div class="timeline-spacer"></div>
+      <div class="timeline-center"><div class="timeline-dot"></div><div class="timeline-line"></div></div>
+      <div class="timeline-card reveal reveal-d2" data-hover>
         <div class="timeline-date">2023</div>
-        <div class="timeline-title">University Representative</div>
+        <div class="timeline-role">University Representative</div>
         <div class="timeline-org">IEEE International Congress · UTM</div>
-        <div class="timeline-desc">Selected as UTM's representative at the IEEE International Congress, engaging with global academic and industry leaders in computing research.</div>
+        <div class="timeline-desc">Selected as UTM's representative at the IEEE International Congress. Engaged with global academic and industry leaders.</div>
       </div>
-      <div class="timeline-item reveal-el reveal-delay-3">
-        <div class="timeline-date">2022 – 2027</div>
-        <div class="timeline-title">B.Comp.Sc. (Software Engineering)</div>
-        <div class="timeline-org">Universiti Teknologi Malaysia · CGPA 3.21/4.00 · Global Star Award</div>
-        <div class="timeline-desc">Final-year Software Engineering undergraduate at UTM's Faculty of Computing. Recipient of the Computing Gala Global Star Award for outstanding international student contributions.</div>
+
+      <!-- Item 4 (left) -->
+      <div class="timeline-card timeline-card-left reveal reveal-d3" data-hover>
+        <div class="timeline-date">2022 – 2027 (EXPECTED)</div>
+        <div class="timeline-role">B.Comp.Sc. (Software Engineering)</div>
+        <div class="timeline-org">Universiti Teknologi Malaysia · CGPA 3.21 · Global Star Award</div>
+        <div class="timeline-desc">Final-year Software Engineering at UTM's Faculty of Computing. Recipient of the Computing Gala Global Star Award for outstanding international student contributions.</div>
       </div>
+      <div class="timeline-center"><div class="timeline-dot"></div><div class="timeline-line" style="background:linear-gradient(180deg, var(--gold), transparent);"></div></div>
+      <div class="timeline-spacer"></div>
     </div>
   </div>
 </section>
@@ -401,44 +455,36 @@
 <!-- ============================================ -->
 <!-- CONTACT                                       -->
 <!-- ============================================ -->
-<section class="contact" id="contact">
+<section class="section contact" id="contact">
   <div class="container">
-    <div class="contact-content">
-      <div class="eyebrow reveal-el">Get In Touch</div>
-      <h2 class="contact-title reveal-el">
-        Let's build something <span class="gradient-text">together.</span>
-      </h2>
-      <p class="contact-sub reveal-el">
-        I'm always open to discussing new opportunities, startup ideas, or interesting engineering challenges. Let's connect.
-      </p>
-      <div class="contact-links">
-        <a href="mailto:saminsarwat.ai@gmail.com" class="contact-link-card reveal-el reveal-delay-1">
-          <span class="contact-link-label">EMAIL</span>
-          <span class="contact-link-value">saminsarwat.ai@gmail.com</span>
-        </a>
-        <a href="https://www.linkedin.com/in/samin-sarwat-a22944280" target="_blank" class="contact-link-card reveal-el reveal-delay-2">
-          <span class="contact-link-label">LINKEDIN</span>
-          <span class="contact-link-value">samin-sarwat</span>
-        </a>
-        <a href="https://github.com/saminsarwat007" target="_blank" class="contact-link-card reveal-el reveal-delay-3">
-          <span class="contact-link-label">GITHUB</span>
-          <span class="contact-link-value">saminsarwat007</span>
-        </a>
-        <a href="tel:+601137389873" class="contact-link-card reveal-el reveal-delay-4">
-          <span class="contact-link-label">PHONE</span>
-          <span class="contact-link-value">+60 11-3738 9873</span>
-        </a>
-      </div>
-      <div class="footer-signoff reveal-el">
-        <span>SAMIN SARWAT</span>
-        <span>·</span>
-        <span>SOFTWARE ENGINEER</span>
-        <span>·</span>
-        <span>JOHOR BAHRU, MALAYSIA</span>
-      </div>
+    <div class="eyebrow reveal">Contact</div>
+    <h2 class="contact-title reveal reveal-d1">Let's build something<br/><span class="gradient-text">extraordinary.</span></h2>
+    <p class="contact-sub reveal reveal-d2">I'm always open to discussing new opportunities, startup ideas, or interesting engineering challenges.</p>
+    <div class="contact-grid">
+      <a href="mailto:saminsarwat.ai@gmail.com" class="contact-card reveal reveal-d1" data-hover>
+        <span class="contact-label">EMAIL</span>
+        <span class="contact-value">saminsarwat.ai@gmail.com</span>
+      </a>
+      <a href="https://www.linkedin.com/in/samin-sarwat-a22944280" target="_blank" class="contact-card reveal reveal-d2" data-hover>
+        <span class="contact-label">LINKEDIN</span>
+        <span class="contact-value">samin-sarwat</span>
+      </a>
+      <a href="https://github.com/saminsarwat007" target="_blank" class="contact-card reveal reveal-d3" data-hover>
+        <span class="contact-label">GITHUB</span>
+        <span class="contact-value">saminsarwat007</span>
+      </a>
+      <a href="tel:+601137389873" class="contact-card reveal reveal-d4" data-hover>
+        <span class="contact-label">PHONE</span>
+        <span class="contact-value">+60 11-3738 9873</span>
+      </a>
     </div>
   </div>
 </section>
+
+<div class="footer">
+  <div class="footer-left"><span>SAMIN SARWAT</span> · SOFTWARE ENGINEER · 2026</div>
+  <div class="footer-right">DESIGNED & BUILT WITH OBSESSION</div>
+</div>
 
 <script src="script.js"></script>
 </body>
